@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include <windows.h>
 
 int main()
 {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
     std::cout << "Hello World!\n";
+    std::cout << "Тест\n";
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
