@@ -64,7 +64,4 @@ int main()
 		cout << "Уровень: снайпер." << endl;
 	}
 	return 0;
-	
-
-	
 }
