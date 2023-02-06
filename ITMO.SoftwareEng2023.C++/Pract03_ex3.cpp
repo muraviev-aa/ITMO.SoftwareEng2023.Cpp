@@ -16,12 +16,14 @@ int main()
 	system("chcp 1251");
 	double a; // исходные данные
 	int n;    // исходные данные
+	double b; // выходные данные
 	cout << "Введите число a: " << endl;    // a - действительное, больше или равное 1, не превосходит 1000, 
 	cin >> a;                               // задано с точностью до 6 знаков после десятичной точки.
 	cout << "Введите число n: " << endl;    // n - натуральное, не превосходящее 10.
 	cin >> n;
 	long double firBinSearch(double, int);
-	cout << "Вычисленное значение: " << firBinSearch(a, n) << endl; // выходные данные
+	b = firBinSearch(a, n);
+	cout << "Вычисленное значение: " << b << endl; 
 }
 
 long double firBinSearch(double a, int n)
