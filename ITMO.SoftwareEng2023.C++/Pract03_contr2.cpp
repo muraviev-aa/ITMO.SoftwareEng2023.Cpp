@@ -9,8 +9,8 @@
 
 using namespace std;
 
-double cubicRootVar1(double);
-double cubicRootVar2(double, double);
+double cubicRoot(double);
+double cubicRoot(double, double);
 
 int main()
 {
@@ -19,17 +19,17 @@ int main()
 	double b = 3;
 	cout << "Введите число: " << endl;
 	cin >> a;
-	cout << "Первый вариант вычисления: " << cubicRootVar1(a) << endl;
-	cout << "Второй вариант вычисления: " << cubicRootVar2(a, b) << endl;
+	cout << "Первый вариант вычисления: " << cubicRoot(a) << endl;
+	cout << "Второй вариант вычисления: " << cubicRoot(a, b) << endl;
 }
 
-double cubicRootVar1(double a)
+double cubicRoot(double a)
 {
 	return pow(a, 1.0 / 3);
 }
 
 
-double cubicRootVar2(double a, double b)
+double cubicRoot(double a, double b)
 {
 	return (2 * b + a / pow(b, 2)) / 3;
 }
