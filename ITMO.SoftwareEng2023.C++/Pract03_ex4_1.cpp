@@ -40,5 +40,5 @@ int addNumders(int n, int c)
 {
 	if (n == 1) return 1; // выход из рекурсии
 	else if (n - 1 >= c)
-		return (n + addNumders((n - 1), c));
+		return n + addNumders((n - 1), c);
 }
