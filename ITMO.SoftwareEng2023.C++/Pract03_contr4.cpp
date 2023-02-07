@@ -22,6 +22,6 @@ int main()
 
 int func(int n)
 {
-	if (n == 0) return 5;
-	else 5 + func(n - 1);
+	if (n == 1 || n < 0) return 5; // выход из рекурсии
+	else return func(n - 1) + (n * 5);
 }
