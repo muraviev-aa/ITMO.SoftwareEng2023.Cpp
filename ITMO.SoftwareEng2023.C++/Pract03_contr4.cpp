@@ -9,9 +9,19 @@
 
 using namespace std;
 
+int func(int);
+
 int main()
 {
 	system("chcp 1251");
-	int a;
+	int n;
+	cout << "Введите значение n: " << endl;
+	cin >> n;
+	cout << "Сумма ряда равна: " << func(n) << endl;
+}
 
+int func(int n)
+{
+	if (n == 0) return 5;
+	else 5 + func(n - 1);
 }
