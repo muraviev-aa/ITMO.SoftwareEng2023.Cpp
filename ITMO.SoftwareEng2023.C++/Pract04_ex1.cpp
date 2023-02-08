@@ -13,7 +13,6 @@ void print(double x, double y);
 
 int main()
 {
-	system("chcp 1251");
 	double k = 2.5;
 	double xv = 10;
 	double yv = 10;
