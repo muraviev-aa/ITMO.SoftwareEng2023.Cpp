@@ -7,27 +7,30 @@
 #include <iostream> 
 using namespace std;
 
-bool Input(int, int);
+bool Input(int&, int&);
 
 int main()
 {
 	system("chcp 1251");
-	int a, b;
-	cout << "Введите значения чисел a и b через пробел: " << endl;
-	cin >> a >> b;
+	int av = 0;
+	int bv = 0;
+	//cout << "Введите значения чисел a и b через пробел: " << endl;
+	//cin >> a >> b;
 
-	if (!Input(a, b))
+	if (!Input(av, bv))
 	{
 		cerr << "error";
 		return 1;
 	}
 
-	int s = a + b;
+	int s = av + bv;
 	cout << s << endl;
 	return 0;
 }
 
-bool Input(int a, int b)
+bool Input(int &a, int &b)
 {
+	cout << "Введите значения чисел a и b через пробел: " << endl;
+	cin >> a >> b;
 	return a == b;
 }
