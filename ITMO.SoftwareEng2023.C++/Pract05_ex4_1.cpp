@@ -21,7 +21,7 @@ int main()
 	cout << "Введите необходимый размер массива: " << n << endl;
 	cin >> n;
 
-	int* mas = new int[n];
+	int* mas = new int[n];  // динамический массив
 	cout << "Введите значения элементов:" << endl;
 
 	for (int i = 0; i < n; i++)
