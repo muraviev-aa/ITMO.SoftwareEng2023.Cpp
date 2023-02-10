@@ -41,6 +41,7 @@ int main()
 	default: cout << "\rНеизвестная операция ";
 	}
 	show_array(mas, n);
+	delete[]mas;       // освобождение динамической памяти
 	return 0;
 }
 
