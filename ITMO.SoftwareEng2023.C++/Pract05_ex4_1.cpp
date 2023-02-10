@@ -66,6 +66,6 @@ int main()
 	}
 	cout << "Сумма элементов с четными индексами: " << sEven << endl;
 
-	delete []mas;
+	delete []mas; // освобождение динамической памяти
 	return 0;
 }
