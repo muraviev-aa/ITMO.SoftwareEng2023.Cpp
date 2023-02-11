@@ -9,7 +9,6 @@ using namespace std;
 
 int* funcSort(int a[], int N);
 
-
 int main()
 {
 	const int N = 10;
