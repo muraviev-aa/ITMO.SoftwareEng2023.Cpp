@@ -16,7 +16,7 @@ int main()
 	json js;
 	string fileName = "6_3.json";
 
-	js = json::array({ 1, 25, 6, 32, 43, 5, 96, 23, 4, 55 }); // Массив.Cоздание и запись массива в json
+	js = json::array({ 1, 25, 6, 32, 43, 5, 96, 23, 4, 55 }); // Cоздание и запись массива в json
 	ofstream in(fileName);
 	in << js << endl;
 	in.close();
@@ -51,7 +51,7 @@ int main()
 		}
 	}
 
-	string fileName1 = "6_3sort.json";   // Массив запись в другой json
+	string fileName1 = "6_3sort.json";   // Запись отсортированного массива в другой json
 	ofstream sort(fileName1);
 	for (int i = 0; i < N; i++) {
 		sort << a[i] << '\t';
