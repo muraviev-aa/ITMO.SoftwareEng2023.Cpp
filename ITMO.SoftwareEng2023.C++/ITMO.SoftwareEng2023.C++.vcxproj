@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Pract07_ex5.cpp" />
+    <ClCompile Include="Pract07_contr1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
