@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Pract07_contr2.cpp">
+    <ClCompile Include="Pract07_contr3.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
