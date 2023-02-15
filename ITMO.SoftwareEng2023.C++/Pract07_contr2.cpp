@@ -16,27 +16,7 @@ struct Solution
 	int result;
 };
 
-Solution funcSolution(int a, int b, int c)
-{
-	Solution s;
-	int d = pow(b, 2) - 4 * a * c;
-	if (d > 0)
-	{
-		s.x1 = (-b + sqrt(d)) / (2 * a);
-		s.x2 = (-b - sqrt(d)) / (2 * a);
-		s.result = 2;
-	}
-	else if (d == 0)
-	{
-		s.x1 = -b / (2 * a);
-		s.result = 1;
-	}
-	else
-	{
-		s.result = 0;
-	}
-	return s;
-}
+Solution funcSolution(int a, int b, int c);
 
 int main()
 {
@@ -62,4 +42,26 @@ int main()
 	{
 		cout << "Уравнение не имеет решения." << endl;
 	}
+}
+
+Solution funcSolution(int a, int b, int c)
+{
+	Solution s;
+	int d = pow(b, 2) - 4 * a * c;
+	if (d > 0)
+	{
+		s.x1 = (-b + sqrt(d)) / (2 * a);
+		s.x2 = (-b - sqrt(d)) / (2 * a);
+		s.result = 2;
+	}
+	else if (d == 0)
+	{
+		s.x1 = -b / (2 * a);
+		s.result = 1;
+	}
+	else
+	{
+		s.result = 0;
+	}
+	return s;
 }
