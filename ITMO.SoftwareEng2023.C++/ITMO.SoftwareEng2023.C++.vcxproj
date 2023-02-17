@@ -22,11 +22,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main1.cpp" />
-    <ClCompile Include="student.cpp" />
+    <ClCompile Include="main2.cpp" />
+    <ClCompile Include="student1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="student.h" />
+    <ClInclude Include="student1.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
