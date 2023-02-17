@@ -8,6 +8,8 @@
 #include <string>
 #include "student.h"
 using namespace std;
+
+
 int main()
 {
 	// Создание объекта класса Student
