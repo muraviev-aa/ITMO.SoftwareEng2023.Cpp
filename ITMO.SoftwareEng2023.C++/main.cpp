@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
 	// Создание объекта класса Student
-	Student student01;
+	Student student01;            
 	string name;
 	string last_name;
 
