@@ -1,20 +1,20 @@
 ﻿// ITMO.SoftwareEng2023.C++
 // Практическое занятие 8. Объявление и реализация класса. 
 // Реализация инкапсуляции. Конструкторы и деструкторы.
-// Упражнение 4. Использование конструктора
+// Упражнение 5. Сохранение данных в файл
 //
 
-/* main2.cpp */
+/* main3.cpp */
 
 #include <iostream>
 #include <string>
-#include "student1.h"
+#include "student2.h"
 using namespace std;
 
 
 int main()
 {
-	
+	system("chcp 1251");
 	string name;
 	string last_name;
 
