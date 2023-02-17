@@ -22,11 +22,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main3.cpp" />
-    <ClCompile Include="student2.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="student2.h" />
+    <ClCompile Include="Pract08_contr1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
