@@ -28,12 +28,12 @@ public:
 		a = as;
 		b = bs;
 		c = cs;
+		if (a > b + c || b > a + c || c > a + b)
+			throw InvalidLength();
 	}
 
 	double funSquare()
 	{
-		if (a > b + c || b > a + c || c > a + b)
-			throw InvalidLength();
 		double pp = 0.5 * (a + b + c); // Полупериметр треугольника
 		double sq = sqrt(pp * (pp - a) * (pp - b) * (pp - c)); // Площадь треугольника
 		return sq;
@@ -48,11 +48,11 @@ private:
 int main()
 {
 	system("chcp 1251");
-	//Triangle tr(4.717, 4.717, 5);  // Площадь треугольника равна 10
-	Triangle tr(20, 20, 100);        // ERROR
-
+	
 	try
 	{
+		Triangle tr(4.717, 4.717, 5);  // Площадь треугольника равна 10
+		//Triangle tr(20, 20, 100);        // ERROR
 		cout << "Площадь треугольника: " << tr.funSquare() << endl;
 	}
 	catch (InvalidLength& error)
@@ -61,5 +61,6 @@ int main()
 		error.printMessage();
 		return 1;   // завершение программы при ошибке
 	}
+	
 	return 0;       // нормальное завершение программы
 }
