@@ -77,7 +77,7 @@ int main()
 	tr->printLengthSides();
 	cout << "Периметр треугольника: " << tr->trianglePerim() << endl;
 	cout << "Площадь треугольника: " << tr->triangleSquare() << endl;
-	delete tr;  // Удаляю треугольник в куче, точки тоже удаляются т.к. это композиция
+	delete tr;  // Удаляю объект треугольник в куче, объекты точки в куче также удаляются т.к. это композиция
 	cout << "----------------------" << endl;
 	Triangle tr1(&d4, &d5, &d6);                    // Агрегация
 	tr1.printLengthSides();
