@@ -121,9 +121,9 @@ Time Time::operator- (const Time& t)
 
 bool Time::operator> (const Time& t)
 {
-	bool comparison = 1;
+	bool comparison;
 	if (timeInSeconds() > t.timeInSeconds())
-		comparison;
+		comparison = 1;
 	else
 		comparison = 0;
 	return comparison;
