@@ -2,6 +2,7 @@
 // Практическое занятие 8. Объявление и реализация класса. 
 // Реализация инкапсуляции. Конструкторы и деструкторы.
 // Упражнение 3. Создание и удаление объекта
+// Файл включает в себя пример Практическое занятие 10. Упражнение 1.
 //
 
 /* main1.cpp */
@@ -14,10 +15,15 @@ using namespace std;
 
 int main()
 {
+	IdCard idc(123, "Базовый"); // Объект класса IdCard с передачей двух значений для инициализации объекта
+
 	// Выделение памяти для объекта Student
-	Student* student02 = new Student;
+	
+
 	string name;
 	string last_name;
+	Student* student02 = new Student(name, last_name, &idc);
+	
 
 	// Ввод имени с клавиатуры
 	cout << "Name: ";
@@ -58,6 +64,9 @@ int main()
 	cout << "Average ball for " << student02->get_name() << " "
 		<< student02->get_last_name() << " is "
 		<< student02->get_average_score() << endl;
+
+	cout << "IdCard:" << student02->getIdCard().getNumber() << endl;
+	cout << "Category: " << student02->getIdCard().getCategory() << endl;
 
 	delete student02; // Освобождаем память, занимаемую объектом
 

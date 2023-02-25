@@ -2,11 +2,28 @@
 // Практическое занятие 8. Объявление и реализация класса. 
 // Реализация инкапсуляции. Конструкторы и деструкторы.
 // Упражнение 2. Разделение реализации и представления
+// Файл включает в себя пример Практическое занятие 10. Упражнение 1.
 //
 
 /* student.cpp */
 #include <string>
 #include "student.h"
+
+Student::Student(string name, string last_name, IdCard* id)
+{
+	set_name(name);
+	set_last_name(last_name);
+	setIdCard(id);
+}
+
+void Student::setIdCard(IdCard* c)
+{
+	iCard = c;
+}
+IdCard Student::getIdCard()
+{
+	return *iCard;
+}
 
 // Установка имени студента
 void Student::set_name(std::string student_name)
