@@ -22,13 +22,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IdCard.cpp" />
-    <ClCompile Include="main1.cpp" />
-    <ClCompile Include="student.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="IdCard.h" />
-    <ClInclude Include="student.h" />
+    <ClCompile Include="Pract11_ex1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
