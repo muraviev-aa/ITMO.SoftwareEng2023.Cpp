@@ -121,12 +121,10 @@ Time Time::operator- (const Time& t)
 
 bool Time::operator> (const Time& t)
 {
-	bool comparison;
 	if (timeInSeconds() > t.timeInSeconds())
-		comparison = 1;
+		return true;
 	else
-		comparison = 0;
-	return comparison;
+		return false;
 }
 
 int main()
@@ -147,7 +145,7 @@ int main()
 		Time time4 = time1 + time2;            // Cложение объектов Time
 		cout << "\nСложение с помощью перегрузки оператора\n";
 		timeVisible(time4);
-		if (time1 > time2)
+		if (time1 > time2)                     // Cравнение объектов Time
 		{
 			Time time5 = time1 - time2;        // Вычитание объектов Time
 			cout << "\nВычитание с помощью перегрузки оператора\n";
@@ -172,4 +170,5 @@ int main()
 	Time time7 = time1 + time6;
 	cout << "\nСложение обьекта Time и переменной в double\n";
 	timeVisible(time7);
+	return 0;
 }
