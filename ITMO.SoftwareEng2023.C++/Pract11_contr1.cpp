@@ -30,6 +30,15 @@ public:
 		m_seconds = seconds;
 	}
 
+	Time(double t) 
+	{
+		m_hours = (int)t;            // Количество часов после перевода
+		double _m_minutes = (t - m_hours) * 60;
+		m_minutes = (int)_m_minutes; // Количество минут после перевода
+		double _m_seconds = (_m_minutes - m_minutes) * 60;
+		m_seconds = (int)_m_seconds; // Количество минут после перевода
+	}
+
 	friend void timeVisible(Time& t)
 	{
 		cout << "Результат: " << t.m_hours << ":" << t.m_minutes << ":" << t.m_seconds << endl;
@@ -47,8 +56,14 @@ public:
 		return time;
 	}
 
+	double timeInSeconds() const
+	{
+		return 3600 * m_hours + 60 * m_minutes + m_seconds;
+	}
+
 	Time operator+ (const Time&);
 	Time operator- (const Time&);
+	bool operator> (const Time&);
 
 private:
 	int m_hours;
@@ -104,26 +119,44 @@ Time Time::operator- (const Time& t)
 	return time;
 }
 
+bool Time::operator> (const Time& t)
+{
+	bool comparison = 1;
+	if (timeInSeconds() > t.timeInSeconds())
+		comparison;
+	else
+		comparison = 0;
+	return comparison;
+}
+
 int main()
 {
 	system("chcp 1251");
 	int hours, minutes, seconds;
-	Time time1(1, 50, 55);                // Первый инициализированный объект в стеке
-	cout << "Введите часы, минуты, секунды через пробел:\n";
+	double timeInDouble;   // Время в формате double
+	Time time1(1, 50, 55); 
+	cout << "\nВведите часы, минуты, секунды через пробел:\n";
 	cin >> hours >> minutes >> seconds;
-
+	
 	try
 	{
-		Time time2(hours, minutes, seconds);   // Второй инициализированный объект в стеке
+		Time time2(hours, minutes, seconds);   
 		Time time3 = time1.timeAdded(time2);   // Сложение объектов Time с помощью функции
 		cout << "\nСложение с помощью функции\n";
 		timeVisible(time3);
 		Time time4 = time1 + time2;            // Cложение объектов Time
 		cout << "\nСложение с помощью перегрузки оператора\n";
 		timeVisible(time4);
-		Time time5 = time1 - time2;            // Вычитание объектов Time
-		cout << "\nВычитание с помощью перегрузки оператора\n";
-		timeVisible(time5);
+		if (time1 > time2)
+		{
+			Time time5 = time1 - time2;        // Вычитание объектов Time
+			cout << "\nВычитание с помощью перегрузки оператора\n";
+			timeVisible(time5);
+		}
+		else
+		{
+			cout << "\nОперацию вычитания выполнить невозможно ввиду малого значения уменьшаемого.\n";
+		}
 	}
 	catch (IncorrectData& error)
 	{
@@ -131,4 +164,12 @@ int main()
 		error.printMessage();
 	}
 
+	cout << "\nВведите время в формате double:\n";
+	cin >> timeInDouble;
+	Time time6(timeInDouble);
+	cout << "\nПеревод значения времени из double в объект Time\n";
+	timeVisible(time6);  
+	Time time7 = time1 + time6;
+	cout << "\nСложение обьекта Time и переменной в double\n";
+	timeVisible(time7);
 }
