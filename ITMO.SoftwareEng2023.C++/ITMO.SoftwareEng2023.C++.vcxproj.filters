@@ -18,7 +18,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Pract11_contr2.cpp">
+    <ClCompile Include="Pract11_ex1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
