@@ -4,5 +4,5 @@ Ivan Petrov 88888888888 professor
 
 Sidor Sidorov 22222222222 professor
 
-Sidor Kukuev 77777777777 youngMan
+Fedor Kukuev 77777777777 youngMan
 

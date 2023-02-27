@@ -20,7 +20,7 @@ class Professor : public Person
 {
 public:
 	Professor(string fn, string ln, string pn, string c):
-		firstName(fn), lastName(ln), phonNamber(pn), career(c)
+		firstName(fn), lastName(ln), phonNumber(pn), career(c)
 	{}
 	string Action() const override
 	{
@@ -31,7 +31,7 @@ public:
 private:
 	string firstName;
 	string lastName;
-	string phonNamber;
+	string phonNumber;
 	string career;
 };
 
@@ -39,7 +39,7 @@ class YoungMan : public Person
 {
 public:
 	YoungMan(string fn, string ln, string pn, string c) :
-		firstName(fn), lastName(ln), phonNamber(pn), career(c)
+		firstName(fn), lastName(ln), phonNumber(pn), career(c)
 	{}
 	string Action() const override
 	{
@@ -50,7 +50,7 @@ public:
 private:
 	string firstName;
 	string lastName;
-	string phonNamber;
+	string phonNumber;
 	string career;
 };
 
@@ -64,17 +64,16 @@ public:
 		return "Я декан ИТМО\n";
 	}
 	friend ostream& operator<< (ostream&, const Dean&);
-	Dean* GetInstance(string fn, string ln, string pn, string c);
+	static Dean* GetInstance(string fn, string ln, string pn, string c);
 	//static Dean* GetInstance(const std::string& value);
 protected:
-	Dean(string fn, string ln, string pn, string c) : // Шаблон Singleton
-		firstName(fn), lastName(ln), phonNamber(pn), career(c)
-	{}
+	Dean(string fn, string ln, string pn, string c) : 
+		firstName(fn), lastName(ln), phonNumber(pn), career(c) {}
 	static Dean* dean_;
 private:
 	string firstName;
 	string lastName;
-	string phonNamber;
+	string phonNumber;
 	string career;
 };
 
@@ -82,7 +81,7 @@ Dean* Dean::dean_ = nullptr;
 Dean* Dean::GetInstance(string fn, string ln, string pn, string c)
 {
 	if (dean_ == nullptr) {
-		dean_ = new Dean(firstName, lastName, phonNamber, career);
+		dean_ = new Dean(fn, ln, pn, c);
 	}
 	return dean_;
 }
@@ -136,21 +135,21 @@ private:
 ostream& operator<< (ostream& out, const Professor& prof)
 {
 	out << prof.firstName << " " << prof.lastName
-		<< " " << prof.phonNamber << " " << prof.career << "\n"<< endl;
+		<< " " << prof.phonNumber << " " << prof.career << "\n"<< endl;
 		return out;
 }
 
 ostream& operator<< (ostream& out, const YoungMan& ym)
 {
 	out << ym.firstName << " " << ym.lastName
-		<< " " << ym.phonNamber << " " << ym.career << "\n" << endl;
+		<< " " << ym.phonNumber << " " << ym.career << "\n" << endl;
 	return out;
 }
 
 ostream& operator<< (ostream& out, const Dean& d)
 {
 	out << d.firstName << " " << d.lastName
-		<< " " << d.phonNamber << " " << d.career << "\n" << endl;
+		<< " " << d.phonNumber << " " << d.career << "\n" << endl;
 	return out;
 }
 
@@ -166,10 +165,14 @@ int main()
 	Person* professor1 = new Professor("Sidor", "Sidorov", "22222222222", "professor");
 	ClientCode(professor);
 	ClientCode(professor1);
-	//Person* dean = Dean::GetInstance("Petr", "Ivanov", "99999999999", "dean"); // Может быть только ОДИН декан благодаря шаблону Singleton
-	//Person* dean1 = new Dean("Сreate impossible", "Сreate impossible", "00000000000", "dean"); // Создать еще один объект Dean невозможно
-	//ClientCode(dean);
-	Person* youngMan = new YoungMan("Sidor", "Kukuev", "77777777777", "youngMan");
+
+	// Может быть только ОДИН декан благодаря шаблону Singleton
+	Person* dean = Dean::GetInstance("Petr", "Ivanov", "99999999999", "dean"); 
+	// Попытка создать еще один объект Dean вызывает ошибку
+	//Person* dean1 = new Dean("Сreate impossible", "Сreate impossible", "00000000000", "dean"); 
+	ClientCode(dean);
+
+	Person* youngMan = new YoungMan("Fedor", "Kukuev", "77777777777", "youngMan");
 	ClientCode(youngMan);
 	Person* studentA = new StudentA(youngMan); // Декорация объекта youngMan
 	ClientCode(studentA);
@@ -185,21 +188,15 @@ int main()
 	for (auto& professor : v)
 		//cout << professor;
 		book << professor;
-
-	//vector<Dean> v1;
-	//v1.push_back(Dean("Petr", "Ivanov", "99999999999", "dean"));
-	//for (auto& dean : v1)
-	//	//cout << dean;
-	//	book << dean;
-
-	vector<YoungMan> v2;
-	v2.push_back(YoungMan("Sidor", "Kukuev", "77777777777", "youngMan"));
-	for (auto& youngMan : v2)
+	vector<YoungMan> v1;
+	v1.push_back(YoungMan("Fedor", "Kukuev", "77777777777", "youngMan"));
+	for (auto& youngMan : v1)
 		//cout << youngMan;
 		book << youngMan;
 	book.close();
 	delete professor;
 	delete professor1;
+	delete dean;
 	delete youngMan;
 	delete studentA;
 	delete studentB;
