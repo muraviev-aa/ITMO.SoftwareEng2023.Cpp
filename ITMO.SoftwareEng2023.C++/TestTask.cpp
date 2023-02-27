@@ -67,7 +67,7 @@ public:
 	Dean* GetInstance(string fn, string ln, string pn, string c);
 	//static Dean* GetInstance(const std::string& value);
 protected:
-	Dean(string fn, string ln, string pn, string c) : // Шаблону Decorator
+	Dean(string fn, string ln, string pn, string c) : // Шаблон Singleton
 		firstName(fn), lastName(ln), phonNamber(pn), career(c)
 	{}
 	static Dean* dean_;
