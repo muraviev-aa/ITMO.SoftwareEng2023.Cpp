@@ -166,7 +166,7 @@ int main()
 	Person* professor1 = new Professor("Sidor", "Sidorov", "22222222222", "professor");
 	ClientCode(professor);
 	ClientCode(professor1);
-	Person* dean = Dean::GetInstance("Petr", "Ivanov", "99999999999", "dean"); // Может быть только ОДИН декан благодаря шаблону Decorator
+	Person* dean = Dean::GetInstance("Petr", "Ivanov", "99999999999", "dean"); // Может быть только ОДИН декан благодаря шаблону Singleton
 	//Person* dean1 = new Dean("Сreate impossible", "Сreate impossible", "00000000000", "dean"); // Создать еще один объект Dean невозможно
 	//ClientCode(dean);
 	Person* youngMan = new YoungMan("Sidor", "Kukuev", "77777777777", "youngMan");
