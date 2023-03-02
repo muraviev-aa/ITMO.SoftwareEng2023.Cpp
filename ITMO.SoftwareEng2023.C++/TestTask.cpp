@@ -65,7 +65,6 @@ public:
 	}
 	friend ostream& operator<< (ostream&, const Dean&);
 	static Dean* GetInstance(string fn, string ln, string pn, string c);
-	//static Dean* GetInstance(const std::string& value);
 protected:
 	Dean(string fn, string ln, string pn, string c) :  // Шаблон Singleton
 		firstName(fn), lastName(ln), phonNumber(pn), career(c) {}
@@ -107,7 +106,7 @@ public:
 	{ 	}
 	string Action() const override
 	{
-		return "Я учусь очно в ИТМО " + Decorator::Action();
+		return "Я учусь очно в ИТМО. " + Decorator::Action();
 	}
 private:
 	string firstName;
@@ -123,7 +122,7 @@ public:
 	{ 	}
 	string Action() const override
 	{
-		return "Я учусь заочно в СПбГАСУ " + Decorator::Action();
+		return "Я учусь заочно в СПбГАСУ. " + Decorator::Action();
 	}
 private:
 	string firstName;
