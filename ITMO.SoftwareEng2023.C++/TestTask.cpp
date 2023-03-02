@@ -180,7 +180,7 @@ int main()
 
 	string fileName = "testTask.txt";
 	ofstream book(fileName);
-	book << "Адресная книга:\n" << endl;
+	book << "The address book:\n" << endl;
 	vector<Professor> v;
 	v.push_back(Professor("Ivan", "Petrov", "88888888888", "professor"));
 	v.push_back(Professor("Sidor", "Sidorov", "22222222222", "professor"));
