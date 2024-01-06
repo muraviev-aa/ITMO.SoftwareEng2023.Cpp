@@ -4,8 +4,8 @@
 ### Программирование на Microsoft Visual C++ 
 
 <p align="center">
-<img src="https://ic.wampi.ru/2023/02/01/Cpp.jpg" alt="drawing" width="550"/>
- </p>
+<img src="" alt="drawing" width="550"/>
+</p>
 
   * Введение в С++. Структура программы. Типы данных.
   * Реализация управляющих конструкций. Функции.
