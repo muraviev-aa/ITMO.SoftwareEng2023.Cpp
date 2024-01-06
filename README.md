@@ -4,7 +4,7 @@
 ### Программирование на Microsoft Visual C++ 
 
 <p align="center">
-<img src="" alt="drawing" width="550"/>
+<img src="images/Cpp.png" alt="drawing" width="550"/>
 </p>
 
   * Введение в С++. Структура программы. Типы данных.
